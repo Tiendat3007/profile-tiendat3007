@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phạm Huỳnh Tiến Đạt — Sinh viên CNTT PTIT | Portfolio</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Hồ sơ cá nhân của Phạm Huỳnh Tiến Đạt (sinh ngày 30/07/2006) — sinh viên ngành Công nghệ Thông tin, Học viện Công nghệ Bưu chính Viễn thông (PTIT). Kỹ năng, hành trình, dự án và thông tin liên hệ.">
+  <meta name="keywords" content="Phạm Huỳnh Tiến Đạt, Tiến Đạt, PTIT, Công nghệ Thông tin, CNTT, Portfolio, Sinh viên IT, Front-end Developer">
+  <meta name="author" content="Phạm Huỳnh Tiến Đạt">
+  <meta name="theme-color" content="#07060a">
+  <meta property="og:title" content="Phạm Huỳnh Tiến Đạt — Sinh viên CNTT PTIT">
+  <meta property="og:description" content="Khám phá hồ sơ, kỹ năng, hành trình học tập và các dự án của Phạm Huỳnh Tiến Đạt.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="avatar.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff4d6d'/%3E%3Cstop offset='1' stop-color='%23f5c76b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='900' font-size='26' fill='%2322050b'%3ETD%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <noscript>
+    <style>
+      .preloader { display: none; }
+      .reveal, .reveal-scale { opacity: 1; transform: none; }
+      .hero-name .line-inner { transform: none; }
+    </style>
+  </noscript>
+</head>
+<body class="loading">
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo"><span>T</span><span>Đ</span></div>
+      <div class="preloader-name">Phạm Huỳnh Tiến Đạt</div>
+      <div class="preloader-bar"><span id="preloader-fill"></span></div>
+      <div class="preloader-count" id="preloader-count">0%</div>
+    </div>
+  </div>
+
+  <!-- ============ AMBIENT BACKGROUND ============ -->
+  <div class="bg-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-glow glow-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- Cursor, progress, toast -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SVG gradient for skill rings -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff4d6d" />
+        <stop offset="50%" stop-color="#e11d48" />
+        <stop offset="100%" stop-color="#f5c76b" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav-logo" id="nav-logo" aria-label="Về đầu trang">
+      <span class="logo-mark">TĐ</span>
+      <span class="logo-text">tiendat<span class="accent">.dev</span></span>
+    </a>
+
+    <nav class="nav-menu" id="nav-menu" aria-label="Điều hướng chính">
+      <a href="#home" class="nav-link active" id="nav-link-home" data-section="home">Trang chủ</a>
+      <a href="#about" class="nav-link" id="nav-link-about" data-section="about">Giới thiệu</a>
+      <a href="#skills" class="nav-link" id="nav-link-skills" data-section="skills">Kỹ năng</a>
+      <a href="#journey" class="nav-link" id="nav-link-journey" data-section="journey">Hành trình</a>
+      <a href="#projects" class="nav-link" id="nav-link-projects" data-section="projects">Dự án</a>
+      <a href="#contact" class="nav-link" id="nav-link-contact" data-section="contact">Liên hệ</a>
+      <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-sm btn-gold magnetic" id="nav-cta">
+        <i class="fa-solid fa-handshake"></i><span>Kết nối</span>
+      </a>
+      <button class="nav-burger" id="nav-burger" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-label="Menu di động">
+    <a href="#home" class="mobile-link" id="m-link-home"><span>01</span>Trang chủ</a>
+    <a href="#about" class="mobile-link" id="m-link-about"><span>02</span>Giới thiệu</a>
+    <a href="#skills" class="mobile-link" id="m-link-skills"><span>03</span>Kỹ năng</a>
+    <a href="#journey" class="mobile-link" id="m-link-journey"><span>04</span>Hành trình</a>
+    <a href="#projects" class="mobile-link" id="m-link-projects"><span>05</span>Dự án</a>
+    <a href="#contact" class="mobile-link" id="m-link-contact"><span>06</span>Liên hệ</a>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <div class="hero-eyebrow reveal">
+            <span class="live-dot"></span>
+            <span>Sinh viên CNTT · PTIT · Sẵn sàng học hỏi &amp; thực tập</span>
+          </div>
+
+          <p class="hero-hello reveal">Xin chào <span class="wave">👋</span>, mình là</p>
+
+          <h1 class="hero-name">
+            <span class="line"><span class="line-inner">Phạm Huỳnh</span></span>
+            <span class="line"><span class="line-inner gradient-text">Tiến Đạt.</span></span>
+          </h1>
+
+          <div class="hero-role reveal" aria-live="polite">
+            <span class="prompt">&gt;_</span>
+            <span id="typed-text">Sinh viên Công nghệ Thông tin</span><span class="typed-caret" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-desc reveal">
+            Sinh viên ngành <strong>Công nghệ Thông tin</strong> tại <strong>Học viện Công nghệ Bưu chính Viễn thông (PTIT)</strong>.
+            Mình yêu thích việc biến những dòng code thành sản phẩm <strong>đẹp, nhanh và hữu ích</strong> — luôn tò mò,
+            học hỏi mỗi ngày và theo đuổi sự tinh tế trong từng chi tiết.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-primary magnetic" id="hero-btn-projects">
+              <span>Xem dự án của mình</span><i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-ghost magnetic" id="hero-btn-contact">
+              <i class="fa-regular fa-paper-plane"></i><span>Liên hệ ngay</span>
+            </a>
+          </div>
+
+          <ul class="hero-meta reveal">
+            <li><i class="fa-solid fa-cake-candles"></i><span>30.07.2006</span></li>
+            <li><i class="fa-solid fa-building-columns"></i><span>PTIT</span></li>
+            <li><i class="fa-solid fa-laptop-code"></i><span>Công nghệ Thông tin</span></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>Việt Nam</span></li>
+          </ul>
+
+          <div class="hero-socials reveal">
+            <span class="label">// tìm mình tại</span>
+            <a href="https://github.com/Tiendat3007" target="_blank" rel="noopener noreferrer" class="social-btn magnetic" id="hero-social-github" aria-label="GitHub" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:tiendat3007@gmail.com" class="social-btn magnetic js-email-link" id="hero-social-email" aria-label="Email" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <button class="social-btn magnetic" id="hero-copy-email" data-copy-email aria-label="Sao chép email" title="Sao chép email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-scale">
+          <div class="portrait-wrap" id="portrait-tilt" data-tilt="10">
+            <div class="portrait-sun" aria-hidden="true"></div>
+
+            <div class="orbit" aria-hidden="true">
+              <div class="orbit-chip" style="--a:-90deg"><span><i class="fa-brands fa-js" style="color:#f7df1e"></i></span></div>
+              <div class="orbit-chip" style="--a:-18deg"><span><i class="fa-brands fa-python" style="color:#60a5fa"></i></span></div>
+              <div class="orbit-chip" style="--a:54deg"><span class="txt">C++</span></div>
+              <div class="orbit-chip" style="--a:126deg"><span><i class="fa-brands fa-java" style="color:#f87171"></i></span></div>
+              <div class="orbit-chip" style="--a:198deg"><span><i class="fa-brands fa-git-alt" style="color:#fb923c"></i></span></div>
+            </div>
+
+            <div class="portrait-frame">
+              <div class="portrait-inner">
+                <img src="avatar.jpg" alt="Chân dung Phạm Huỳnh Tiến Đạt trong tà áo dài đỏ truyền thống" class="portrait-img" id="portrait-img" width="360" height="360">
+                <div class="portrait-shine" aria-hidden="true"></div>
+                <div class="portrait-caption">Tiến Đạt · 2006</div>
+              </div>
+            </div>
+
+            <div class="float-card fc-1">
+              <div class="fc-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <div class="fc-label">Đang theo học</div>
+                <div class="fc-value">PTIT · CNTT</div>
+              </div>
+            </div>
+
+            <div class="float-card fc-2">
+              <div class="fc-icon gold"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <div class="fc-label">Sinh viên năm</div>
+                <div class="fc-value"><span class="js-study-year">3</span> · <span class="js-age">20</span> tuổi</div>
+              </div>
+            </div>
+
+            <div class="float-card fc-3">
+              <span><span class="c-red">const</span> dat = <span class="c-gold">"always learning"</span>;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#about" class="scroll-hint" id="scroll-hint" aria-label="Cuộn xuống phần giới thiệu">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span>Cuộn xuống</span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <span>C / C++</span><i>✦</i>
+        <span>Java</span><i>✦</i>
+        <span>Python</span><i>✦</i>
+        <span>JavaScript</span><i>✦</i>
+        <span>HTML5 &amp; CSS3</span><i>✦</i>
+        <span>Node.js</span><i>✦</i>
+        <span>SQL</span><i>✦</i>
+        <span>Git &amp; GitHub</span><i>✦</i>
+        <span>Thuật toán</span><i>✦</i>
+        <span>UI / UX</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag"><span class="num">01</span> Giới thiệu</span>
+          <h2 class="section-title">Một chút về <em>mình</em></h2>
+          <p class="section-sub">Người trẻ yêu công nghệ, trân trọng văn hoá Việt và luôn khao khát tạo ra những sản phẩm có giá trị.</p>
+        </div>
+
+        <div class="bento">
+          <article class="card b-bio reveal">
+            <span class="watermark" aria-hidden="true">TĐ</span>
+            <h3>Code bằng lý trí,<br>thiết kế bằng <span class="gradient-text">cảm xúc</span>.</h3>
+            <p>
+              Mình là <strong>Phạm Huỳnh Tiến Đạt</strong>, sinh ngày <strong>30/07/2006</strong>, hiện là sinh viên ngành
+              <strong>Công nghệ Thông tin</strong> tại <strong>Học viện Công nghệ Bưu chính Viễn thông (PTIT)</strong>.
+            </p>
+            <p>
+              Mình đam mê lập trình web, thuật toán và thiết kế giao diện. Với mình, một sản phẩm tốt không chỉ chạy đúng
+              mà còn phải mang lại trải nghiệm dễ chịu cho người dùng. Mỗi ngày mình đều cố gắng học thêm một điều mới —
+              từ cấu trúc dữ liệu, lập trình hướng đối tượng cho tới những hiệu ứng CSS nhỏ nhất.
+            </p>
+            <p>
+              Mục tiêu của mình là trở thành một <strong>Software Engineer</strong> vững vàng, góp phần tạo ra các sản phẩm công nghệ
+              hữu ích cho cộng đồng.
+            </p>
+            <div class="signature">Tiến Đạt</div>
+          </article>
+
+          <article class="card b-info reveal">
+            <h3 class="card-title"><i class="fa-regular fa-id-card"></i> Thông tin cá nhân</h3>
+            <dl class="info-list">
+              <div><dt>Họ và tên</dt><dd>Phạm Huỳnh Tiến Đạt</dd></div>
+              <div><dt>Ngày sinh</dt><dd>30 / 07 / 2006</dd></div>
+              <div><dt>Tuổi</dt><dd><span class="js-age">20</span> tuổi · Sư Tử ♌</dd></div>
+              <div><dt>Trường</dt><dd>Học viện Công nghệ Bưu chính Viễn thông</dd></div>
+              <div><dt>Viết tắt</dt><dd>PTIT</dd></div>
+              <div><dt>Ngành học</dt><dd>Công nghệ Thông tin</dd></div>
+              <div><dt>Trạng thái</dt><dd class="status"><span class="live-dot"></span> Sinh viên năm <span class="js-study-year">3</span></dd></div>
+            </dl>
+          </article>
+
+          <article class="card b-term reveal" aria-label="Terminal giới thiệu">
+            <div class="term-bar"><i></i><i></i><i></i><em>dat@ptit: ~</em></div>
+            <pre class="term-body" id="terminal"></pre>
+          </article>
+
+          <article class="card b-bday reveal">
+            <h3 class="card-title"><i class="fa-solid fa-cake-candles"></i> Sinh nhật</h3>
+            <div class="countdown" id="countdown">
+              <div><b id="cd-days">0</b><span>Ngày</span></div>
+              <div><b id="cd-hours">00</b><span>Giờ</span></div>
+              <div><b id="cd-mins">00</b><span>Phút</span></div>
+              <div><b id="cd-secs">00</b><span>Giây</span></div>
+            </div>
+            <p class="muted" id="bday-note">đến sinh nhật 30/07 tiếp theo 🎂</p>
+          </article>
+
+          <article class="card b-quote reveal">
+            <i class="fa-solid fa-quote-left"></i>
+            <blockquote>Học hỏi không ngừng, kiến tạo không giới hạn.</blockquote>
+            <cite>— Phương châm của Đạt</cite>
+          </article>
+
+          <article class="card b-hobby reveal">
+            <h3 class="card-title"><i class="fa-solid fa-heart"></i> Sở thích &amp; đam mê</h3>
+            <ul class="hobbies">
+              <li>💻 Lập trình</li>
+              <li>🎨 Thiết kế UI</li>
+              <li>🧩 Giải thuật</li>
+              <li>🎮 Game</li>
+              <li>🎵 Âm nhạc</li>
+              <li>📚 Đọc sách</li>
+              <li>📸 Nhiếp ảnh</li>
+              <li>✈️ Du lịch</li>
+              <li>🏮 Văn hoá Việt</li>
+              <li>🤖 AI &amp; công nghệ mới</li>
+            </ul>
+          </article>
+
+          <article class="card b-stats reveal">
+            <h3 class="card-title"><i class="fa-solid fa-chart-simple"></i> Con số</h3>
+            <div class="stats-grid">
+              <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">0</div><div class="stat-label">Công nghệ đã học</div></div>
+              <div class="stat"><div class="stat-num" data-count="15" data-suffix="+">0</div><div class="stat-label">Dự án &amp; bài tập lớn</div></div>
+              <div class="stat"><div class="stat-num" data-count="1000" data-suffix="+">0</div><div class="stat-label">Giờ luyện code</div></div>
+              <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">0</div><div class="stat-label">Nhiệt huyết</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag"><span class="num">02</span> Kỹ năng</span>
+          <h2 class="section-title">Bộ công cụ &amp; <em>năng lực</em></h2>
+          <p class="section-sub">Những gì mình đã học, đang rèn luyện mỗi ngày trên giảng đường PTIT và qua các dự án cá nhân.</p>
+        </div>
+
+        <div class="tabs reveal" id="skill-tabs" role="tablist" aria-label="Lọc kỹ năng">
+          <button class="tab-btn active" id="skill-tab-all" data-filter="all" role="tab">Tất cả</button>
+          <button class="tab-btn" id="skill-tab-lang" data-filter="lang" role="tab">Ngôn ngữ</button>
+          <button class="tab-btn" id="skill-tab-web" data-filter="web" role="tab">Web</button>
+          <button class="tab-btn" id="skill-tab-cs" data-filter="cs" role="tab">Nền tảng CS</button>
+          <button class="tab-btn" id="skill-tab-tools" data-filter="tools" role="tab">Công cụ</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <article class="card skill-card reveal" data-cat="lang">
+            <div class="skill-ring" data-pct="85">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico txt">C++</span>
+            </div>
+            <div class="skill-info"><h3>C / C++ <span class="skill-pct">0%</span></h3><p>Nền tảng lập trình, con trỏ, STL, giải thuật.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="lang">
+            <div class="skill-ring" data-pct="78">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-java" style="color:#f87171"></i></span>
+            </div>
+            <div class="skill-info"><h3>Java <span class="skill-pct">0%</span></h3><p>Lập trình hướng đối tượng, Collections, ứng dụng quản lý.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="lang">
+            <div class="skill-ring" data-pct="72">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-python" style="color:#60a5fa"></i></span>
+            </div>
+            <div class="skill-info"><h3>Python <span class="skill-pct">0%</span></h3><p>Scripting, xử lý dữ liệu, tự động hoá tác vụ.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="web lang">
+            <div class="skill-ring" data-pct="82">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-js" style="color:#f7df1e"></i></span>
+            </div>
+            <div class="skill-info"><h3>JavaScript <span class="skill-pct">0%</span></h3><p>ES6+, DOM, xử lý bất đồng bộ, hiệu ứng tương tác.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="web">
+            <div class="skill-ring" data-pct="90">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-html5" style="color:#fb7185"></i></span>
+            </div>
+            <div class="skill-info"><h3>HTML5 &amp; CSS3 <span class="skill-pct">0%</span></h3><p>Responsive, Flexbox/Grid, animation, glassmorphism.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="web">
+            <div class="skill-ring" data-pct="65">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-node-js" style="color:#4ade80"></i></span>
+            </div>
+            <div class="skill-info"><h3>Node.js <span class="skill-pct">0%</span></h3><p>HTTP server, REST API cơ bản, quản lý package npm.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="cs tools">
+            <div class="skill-ring" data-pct="74">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-solid fa-database" style="color:#f5c76b"></i></span>
+            </div>
+            <div class="skill-info"><h3>SQL / MySQL <span class="skill-pct">0%</span></h3><p>Thiết kế CSDL quan hệ, truy vấn, chuẩn hoá dữ liệu.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="cs">
+            <div class="skill-ring" data-pct="80">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-solid fa-diagram-project" style="color:#ff4d6d"></i></span>
+            </div>
+            <div class="skill-info"><h3>CTDL &amp; Giải thuật <span class="skill-pct">0%</span></h3><p>Sắp xếp, đồ thị, quy hoạch động, độ phức tạp.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="cs">
+            <div class="skill-ring" data-pct="66">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-solid fa-network-wired" style="color:#38bdf8"></i></span>
+            </div>
+            <div class="skill-info"><h3>Mạng máy tính <span class="skill-pct">0%</span></h3><p>Mô hình OSI, TCP/IP, HTTP, kiến thức viễn thông.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="tools">
+            <div class="skill-ring" data-pct="80">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-git-alt" style="color:#fb923c"></i></span>
+            </div>
+            <div class="skill-info"><h3>Git &amp; GitHub <span class="skill-pct">0%</span></h3><p>Quản lý phiên bản, branch, làm việc nhóm.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="tools">
+            <div class="skill-ring" data-pct="62">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-figma" style="color:#f472b6"></i></span>
+            </div>
+            <div class="skill-info"><h3>Figma <span class="skill-pct">0%</span></h3><p>Wireframe, thiết kế giao diện, prototype.</p></div>
+          </article>
+
+          <article class="card skill-card reveal" data-cat="tools">
+            <div class="skill-ring" data-pct="60">
+              <svg viewBox="0 0 84 84"><circle class="track" cx="42" cy="42" r="36"/><circle class="bar" cx="42" cy="42" r="36"/></svg>
+              <span class="ico"><i class="fa-brands fa-linux" style="color:#e5e7eb"></i></span>
+            </div>
+            <div class="skill-info"><h3>Linux &amp; Terminal <span class="skill-pct">0%</span></h3><p>Dòng lệnh, quản lý file, môi trường phát triển.</p></div>
+          </article>
+        </div>
+
+        <ul class="soft-skills reveal">
+          <li><h3>Kỹ năng mềm</h3></li>
+          <li><i class="fa-solid fa-people-group"></i> Làm việc nhóm</li>
+          <li><i class="fa-solid fa-book-open-reader"></i> Tự học</li>
+          <li><i class="fa-solid fa-lightbulb"></i> Giải quyết vấn đề</li>
+          <li><i class="fa-solid fa-microphone-lines"></i> Thuyết trình</li>
+          <li><i class="fa-solid fa-clock"></i> Quản lý thời gian</li>
+          <li><i class="fa-solid fa-language"></i> Tiếng Anh chuyên ngành</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-tag"><span class="num">03</span> Hành trình</span>
+          <h2 class="section-title">Những <em>cột mốc</em> đáng nhớ</h2>
+          <p class="section-sub">Từ cậu bé tò mò với chiếc máy tính tới sinh viên công nghệ đang từng bước chinh phục ước mơ.</p>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="tl-line" aria-hidden="true"><span id="tl-fill"></span></div>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 30.07.2006</div>
+              <h3><i class="fa-solid fa-star"></i> Chào đời</h3>
+              <p>Hành trình bắt đầu vào một ngày hè tháng Bảy — chàng Sư Tử nhỏ với trái tim nhiệt huyết.</p>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2021 — 2024</div>
+              <h3><i class="fa-solid fa-school"></i> Trung học phổ thông</h3>
+              <p>Bắt đầu tò mò với máy tính, viết những dòng code đầu tiên và quyết định theo đuổi con đường Công nghệ Thông tin.</p>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2024</div>
+              <h3><i class="fa-solid fa-trophy"></i> Trúng tuyển PTIT</h3>
+              <p>Chính thức trở thành tân sinh viên ngành Công nghệ Thông tin, Học viện Công nghệ Bưu chính Viễn thông.</p>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2024 — 2025</div>
+              <h3><i class="fa-solid fa-seedling"></i> Năm nhất · Xây nền móng</h3>
+              <p>Làm quen với lập trình C/C++, toán rời rạc, đại số và tư duy giải quyết vấn đề một cách có hệ thống.</p>
+              <div class="tl-tags"><span>C/C++</span><span>Toán rời rạc</span><span>Tin học cơ sở</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2025 — 2026</div>
+              <h3><i class="fa-solid fa-rocket"></i> Năm hai · Tăng tốc</h3>
+              <p>Chinh phục OOP với Java, cấu trúc dữ liệu &amp; giải thuật, cơ sở dữ liệu và những trang web đầu tiên. Bắt đầu làm dự án nhóm.</p>
+              <div class="tl-tags"><span>Java OOP</span><span>CTDL &amp; GT</span><span>SQL</span><span>HTML/CSS/JS</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item current reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-regular fa-calendar"></i> 2026 — Nay <span class="tl-badge">Hiện tại</span></div>
+              <h3><i class="fa-solid fa-fire"></i> Năm ba · Bứt phá</h3>
+              <p>Đi sâu vào phát triển web, mạng máy tính và công nghệ phần mềm. Xây dựng portfolio cá nhân và tìm kiếm cơ hội thực tập.</p>
+              <div class="tl-tags"><span>Web Dev</span><span>Node.js</span><span>Mạng máy tính</span><span>Git</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <div class="card tl-card">
+              <div class="tl-date"><i class="fa-solid fa-flag-checkered"></i> Tương lai</div>
+              <h3><i class="fa-solid fa-mountain-sun"></i> Software Engineer</h3>
+              <p>Tốt nghiệp loại Giỏi, trở thành kỹ sư phần mềm chuyên nghiệp và tạo ra những sản phẩm có ích cho cộng đồng.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag"><span class="num">04</span> Dự án</span>
+          <h2 class="section-title">Sản phẩm <em>tiêu biểu</em></h2>
+          <p class="section-sub">Các dự án cá nhân và bài tập lớn giúp mình biến kiến thức trên lớp thành sản phẩm thực tế.</p>
+        </div>
+
+        <div class="tabs reveal" id="project-tabs" role="tablist" aria-label="Lọc dự án">
+          <button class="tab-btn active" id="project-tab-all" data-filter="all" role="tab">Tất cả</button>
+          <button class="tab-btn" id="project-tab-web" data-filter="web" role="tab">Web</button>
+          <button class="tab-btn" id="project-tab-app" data-filter="app" role="tab">Ứng dụng</button>
+          <button class="tab-btn" id="project-tab-algo" data-filter="algo" role="tab">Thuật toán</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1 -->
+          <article class="card project-card reveal" data-cat="web" data-tilt="4">
+            <div class="project-visual">
+              <span class="project-num">/01</span>
+              <span class="project-badge"><i class="fa-solid fa-star"></i>Dự án cá nhân</span>
+              <div class="pv">
+                <div class="mock-window">
+                  <div class="mw-bar"><i></i><i></i><i></i><span>tiendat.dev</span></div>
+                  <div class="mw-body">
+                    <div class="mw-hero">
+                      <div class="mw-text"><b></b><b></b><b class="short"></b><span class="mw-btn"></span></div>
+                      <div class="mw-avatar"></div>
+                    </div>
+                    <div class="mw-cards"><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas</span></div>
+              <h3 class="project-title">Personal Portfolio — “Lacquer &amp; Gold”</h3>
+              <p class="project-desc">Website hồ sơ cá nhân bạn đang xem: hiệu ứng particle canvas, 3D tilt, typing, đếm ngược sinh nhật, responsive hoàn toàn — viết bằng HTML/CSS/JS thuần.</p>
+              <div class="project-links">
+                <a href="https://github.com/Tiendat3007/dat-html" target="_blank" rel="noopener noreferrer" class="p-link" id="project1-github"><i class="fa-brands fa-github"></i> Mã nguồn</a>
+                <a href="#home" class="p-link" id="project1-demo">Xem trực tiếp <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card project-card reveal" data-cat="web" data-tilt="4">
+            <div class="project-visual">
+              <span class="project-num">/02</span>
+              <span class="project-badge"><i class="fa-solid fa-server"></i>Backend</span>
+              <div class="pv">
+                <div class="mock-term">
+                  <div class="mw-bar"><i></i><i></i><i></i><span>bash — demo-server</span></div>
+                  <div class="mt-body">
+                    <div><span class="c-gold">➜</span> <span class="c-red">~/demo-server</span> node server.js</div>
+                    <div class="c-green">✔ Server running at http://localhost:8080</div>
+                    <div><span class="c-dim">[200]</span> GET / → index.html</div>
+                    <div><span class="c-dim">[200]</span> GET /style.css</div>
+                    <div><span class="c-dim">[200]</span> GET /script.js</div>
+                    <div><span class="c-gold">➜</span> <span class="caret-block"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span>Node.js</span><span>HTTP</span><span>File System</span></div>
+              <h3 class="project-title">Node.js Static Web Server</h3>
+              <p class="project-desc">Web server tự viết bằng module <code>http</code> thuần của Node.js: định tuyến tĩnh, nhận diện MIME type, xử lý lỗi 404/500 — không dùng framework.</p>
+              <div class="project-links">
+                <a href="https://github.com/Tiendat3007/dat-html" target="_blank" rel="noopener noreferrer" class="p-link" id="project2-github"><i class="fa-brands fa-github"></i> Mã nguồn</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card project-card reveal" data-cat="app" data-tilt="4">
+            <div class="project-visual">
+              <span class="project-num">/03</span>
+              <span class="project-badge"><i class="fa-solid fa-graduation-cap"></i>Bài tập lớn</span>
+              <div class="pv">
+                <div class="mock-app">
+                  <aside><span class="logo"></span><i></i><i class="on"></i><i></i><i></i></aside>
+                  <div class="ma-main">
+                    <div class="ma-head"><b>Quản lý Sinh viên</b><span class="ma-search"></span></div>
+                    <div class="ma-row head"><span>MSSV</span><span>Họ tên</span><span>GPA</span></div>
+                    <div class="ma-row"><span></span><span></span><span class="gpa">3.42</span></div>
+                    <div class="ma-row active"><span></span><span></span><span class="gpa">3.87</span></div>
+                    <div class="ma-row"><span></span><span></span><span class="gpa">3.15</span></div>
+                    <div class="ma-row"><span></span><span></span><span class="gpa">3.60</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span>Java</span><span>OOP</span><span>MySQL</span><span>Swing</span></div>
+              <h3 class="project-title">Hệ thống Quản lý Sinh viên</h3>
+              <p class="project-desc">Ứng dụng desktop quản lý hồ sơ, điểm số và lớp học. Áp dụng 4 tính chất OOP, mô hình nhiều tầng và kết nối cơ sở dữ liệu MySQL.</p>
+              <div class="project-links">
+                <a href="https://github.com/Tiendat3007" target="_blank" rel="noopener noreferrer" class="p-link" id="project3-github"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card project-card reveal" data-cat="algo" data-tilt="4">
+            <div class="project-visual">
+              <span class="project-num">/04</span>
+              <span class="project-badge"><i class="fa-solid fa-flask"></i>Thử nghiệm</span>
+              <div class="pv pv-sort">
+                <div class="bars">
+                  <span style="--h:42%;--h2:70%;--d:0"></span>
+                  <span style="--h:78%;--h2:35%;--d:1"></span>
+                  <span style="--h:30%;--h2:58%;--d:2"></span>
+                  <span style="--h:64%;--h2:88%;--d:3"></span>
+                  <span class="cmp" style="--h:92%;--h2:48%;--d:4"></span>
+                  <span class="cmp" style="--h:50%;--h2:96%;--d:5"></span>
+                  <span style="--h:22%;--h2:62%;--d:6"></span>
+                  <span style="--h:70%;--h2:28%;--d:7"></span>
+                  <span style="--h:38%;--h2:80%;--d:8"></span>
+                  <span style="--h:84%;--h2:44%;--d:9"></span>
+                  <span style="--h:56%;--h2:24%;--d:10"></span>
+                  <span style="--h:26%;--h2:66%;--d:11"></span>
+                </div>
+                <div class="sort-label">bubble_sort(arr) · O(n²)</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span>JavaScript</span><span>C++</span><span>Algorithms</span></div>
+              <h3 class="project-title">Algorithm Visualizer</h3>
+              <p class="project-desc">Trực quan hoá các thuật toán sắp xếp và tìm kiếm bằng hoạt ảnh, giúp hiểu rõ từng bước so sánh, hoán đổi và độ phức tạp thời gian.</p>
+              <div class="project-links">
+                <a href="https://github.com/Tiendat3007" target="_blank" rel="noopener noreferrer" class="p-link" id="project4-github"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-tag"><span class="num">05</span> Liên hệ</span>
+          <h2 class="section-title">Cùng tạo nên điều <em>tuyệt vời</em></h2>
+          <p class="section-sub">Cơ hội thực tập, dự án nhóm hay chỉ đơn giản là một lời chào — mình luôn sẵn lòng lắng nghe!</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="card contact-info reveal">
+            <h3>Thông tin kết nối</h3>
+            <p>Liên hệ trực tiếp qua các kênh bên dưới. Mình thường phản hồi trong vòng 24 giờ.</p>
+
+            <div class="channels">
+              <a href="mailto:tiendat3007@gmail.com" class="channel js-email-link" id="contact-email">
+                <span class="ch-icon"><i class="fa-solid fa-envelope"></i></span>
+                <span><span class="ch-label">Email</span><br><span class="ch-value js-email-text">tiendat3007@gmail.com</span></span>
+                <i class="fa-solid fa-arrow-right ch-arrow"></i>
+              </a>
+              <a href="https://github.com/Tiendat3007" target="_blank" rel="noopener noreferrer" class="channel" id="contact-github">
+                <span class="ch-icon"><i class="fa-brands fa-github"></i></span>
+                <span><span class="ch-label">GitHub</span><br><span class="ch-value">github.com/Tiendat3007</span></span>
+                <i class="fa-solid fa-arrow-up-right-from-square ch-arrow"></i>
+              </a>
+              <button type="button" class="channel" id="contact-copy-email" data-copy-email>
+                <span class="ch-icon"><i class="fa-regular fa-copy"></i></span>
+                <span><span class="ch-label">Sao chép nhanh</span><br><span class="ch-value">Copy địa chỉ email</span></span>
+                <i class="fa-solid fa-clipboard ch-arrow"></i>
+              </button>
+              <div class="channel">
+                <span class="ch-icon"><i class="fa-solid fa-building-columns"></i></span>
+                <span><span class="ch-label">Nơi học tập</span><br><span class="ch-value">Học viện Công nghệ Bưu chính Viễn thông</span></span>
+              </div>
+            </div>
+
+            <div class="availability"><span class="live-dot"></span> Đang tìm kiếm cơ hội thực tập &amp; dự án học hỏi</div>
+          </div>
+
+          <div class="card contact-form reveal">
+            <h3>Gửi lời nhắn</h3>
+            <p>Điền thông tin bên dưới, ứng dụng email của bạn sẽ được mở sẵn nội dung.</p>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <input type="text" id="form-name" name="name" placeholder=" " autocomplete="name" required>
+                  <label for="form-name">Họ và tên <b>*</b></label>
+                </div>
+                <div class="field">
+                  <input type="email" id="form-email" name="email" placeholder=" " autocomplete="email" required>
+                  <label for="form-email">Email của bạn <b>*</b></label>
+                </div>
+              </div>
+              <div class="field">
+                <input type="text" id="form-subject" name="subject" placeholder=" ">
+                <label for="form-subject">Chủ đề</label>
+              </div>
+              <div class="field">
+                <textarea id="form-message" name="message" placeholder=" " required></textarea>
+                <label for="form-message">Nội dung tin nhắn <b>*</b></label>
+              </div>
+              <button type="submit" class="btn btn-primary" id="form-submit">
+                <span>Gửi lời nhắn</span><i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-big" aria-hidden="true">TIẾN ĐẠT</div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Phạm Huỳnh Tiến Đạt · PTIT</span>
+        <span>Thiết kế &amp; code với <span class="heart">♥</span> tại Việt Nam</span>
+        <a href="#home" class="back-top magnetic" id="back-to-top" aria-label="Lên đầu trang"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
